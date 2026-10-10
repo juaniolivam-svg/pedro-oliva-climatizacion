@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedro Oliva Climatización — Confort térmico en el AMBA</title>
+<meta name="description" content="Instalación, mantenimiento y venta de equipos de climatización. Aires acondicionados, losa radiante, calderas y equipos centrales. Desde 1998 en todo el AMBA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!--
+  ============================================================
+  IMÁGENES (stock de Pexels — reemplazalas por fotos reales)
+  ============================================================
+  Hero ................. 32588555  (técnico manteniendo aire acondicionado)
+  Aire acondicionado ... 27427771  (split de pared)
+  Losa radiante ........ 38067323  (bomba de calor exterior)
+  Piso / techo radiante  35069730  (pies sobre piso cálido)
+  Venta de equipos ..... 20046689  (equipo/bomba de calor)
+  Equipos centrales .... 30210086  (unidad HVAC en azotea)
+  Calderas ............. 34938439  (técnico reparando sistema de calefacción)
+  Nosotros ............. 32497161  (técnico inspeccionando unidad exterior)
+  Galería .............. 38709544  (técnico con refrigerante)
+                         16145690  (aire acondicionado en azotea)
+                         6471913   (técnico de climatización)
+                         3964617   (técnico trabajando)
+                         38228166  (unidades de AC en azotea)
+                         6471911   (técnico de climatización)
+  Para cambiar una foto, reemplazá la URL completa en el <img>
+  correspondiente (buscá el comentario "--img: X").
+  ============================================================
+-->
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f5f7f9;
+    --ink: #0e1a24;
+    --muted: #5c6b78;
+    --accent: #0277bd;
+    --accent-soft: #e6f2fa;
+    --line: #e6ebef;
+    --radius: 16px;
+    --max: 1160px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 { font-family: "Sora", "Inter", sans-serif; line-height: 1.15; letter-spacing: -0.02em; }
+
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Header ---------- */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    background: rgba(255,255,255,.82);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s, box-shadow .3s;
+  }
+  header.scrolled { border-bottom-color: var(--line); box-shadow: 0 1px 0 rgba(0,0,0,.02); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand { display: flex; align-items: center; gap: 12px; font-family: "Sora", sans-serif; font-weight: 600; }
+  .brand img { height: 44px; width: auto; }
+  .brand span { font-size: 15px; }
+  .nav-links { display: flex; align-items: center; gap: 32px; }
+  .nav-links a { font-size: 14px; font-weight: 500; color: var(--muted); transition: color .2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 14px;
+    border: 1px solid transparent; cursor: pointer; transition: all .2s;
+    font-family: inherit;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #015f96; transform: translateY(-1px); }
+  .btn-ghost { border-color: var(--line); color: var(--ink); background: #fff; }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .nav-cta { padding: 10px 18px; }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; }
+  .hero-media { position: absolute; inset: 0; z-index: 0; }
+  .hero-media img {
+    width: 100%; height: 100%; object-fit: cover;
+    transform: scale(1.15); will-change: transform;
+  }
+  .hero-media::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(14,26,36,.55) 0%, rgba(14,26,36,.35) 45%, rgba(14,26,36,.65) 100%);
+  }
+  .hero-content { position: relative; z-index: 1; color: #fff; max-width: 640px; padding: 120px 0 80px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 500; color: rgba(255,255,255,.85); }
+  .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+  .hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 700; margin: 20px 0; }
+  .hero p { font-size: 17px; color: rgba(255,255,255,.88); max-width: 520px; }
+  .hero-actions { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+  .hero-actions .btn-ghost { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.3); color: #fff; }
+  .hero-actions .btn-ghost:hover { background: rgba(255,255,255,.18); border-color: #fff; }
+  .scroll-hint { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); z-index: 1; color: rgba(255,255,255,.7); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+
+  /* ---------- Sections generales ---------- */
+  section { padding: 96px 0; }
+  .section-head { max-width: 560px; margin-bottom: 56px; }
+  .section-head h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); font-weight: 600; margin-top: 14px; }
+  .kicker { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .section-head p { color: var(--muted); margin-top: 16px; }
+
+  /* ---------- Servicios ---------- */
+  .services { background: var(--bg-soft); }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    overflow: hidden; transition: transform .35s, box-shadow .35s;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -18px rgba(14,26,36,.18); }
+  .card-media { height: 210px; overflow: hidden; }
+  .card-media img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.12); transition: transform .6s ease; }
+  .card:hover .card-media img { transform: scale(1); }
+  .card-body { padding: 24px; }
+  .card-body h3 { font-size: 18px; font-weight: 600; }
+  .card-body p { color: var(--muted); font-size: 14px; margin-top: 10px; }
+
+  /* ---------- Nosotros / stats ---------- */
+  .about { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .about-media { border-radius: var(--radius); overflow: hidden; }
+  .about-media img { width: 100%; height: 480px; object-fit: cover; }
+  .about-copy h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); font-weight: 600; margin-top: 14px; }
+  .about-copy p { color: var(--muted); margin-top: 20px; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+  .stat { border-top: 1px solid var(--line); padding-top: 20px; }
+  .stat b { display: block; font-family: "Sora", sans-serif; font-size: 28px; font-weight: 700; color: var(--accent); }
+  .stat span { font-size: 13px; color: var(--muted); }
+
+  /* ---------- Galería (imágenes dinámicas) ---------- */
+  .gallery { background: var(--ink); color: #fff; }
+  .gallery .kicker { color: #7cc4f0; }
+  .gallery .section-head p { color: rgba(255,255,255,.6); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .g-item { position: relative; border-radius: 12px; overflow: hidden; height: 300px; }
+  .g-item img { width: 100%; height: 100%; object-fit: cover; }
+  .g-item:nth-child(2), .g-item:nth-child(5) { grid-row: span 1; }
+
+  /* ---------- Contacto ---------- */
+  .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+  .contact h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); font-weight: 600; margin-top: 14px; }
+  .contact > div > p { color: var(--muted); margin-top: 18px; }
+  .contact-links { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
+  .contact-item { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; transition: border-color .2s; }
+  .contact-item:hover { border-color: var(--accent); }
+  .contact-item .ic { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+  .contact-item .lbl { font-size: 12px; color: var(--muted); }
+  .contact-item .val { font-weight: 600; font-size: 14px; }
+
+  form { display: flex; flex-direction: column; gap: 16px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label { font-size: 13px; font-weight: 500; }
+  .field input, .field select, .field textarea {
+    font-family: inherit; font-size: 14px; padding: 13px 15px;
+    border: 1px solid var(--line); border-radius: 10px; background: #fff;
+    transition: border-color .2s, box-shadow .2s; color: var(--ink);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+  .field textarea { resize: vertical; min-height: 120px; }
+  .form-note { font-size: 12px; color: var(--muted); }
+
+  /* ---------- Footer ---------- */
+  footer { border-top: 1px solid var(--line); padding: 40px 0; }
+  .foot { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .foot .brand { font-size: 14px; }
+  .foot .brand img { height: 36px; }
+  .foot small { color: var(--muted); font-size: 13px; }
+
+  /* ---------- Animaciones de scroll ---------- */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  .zoom-media img { transform: scale(1.12); transition: transform 1s cubic-bezier(.22,.61,.36,1); }
+  .zoom-media.visible img { transform: scale(1); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .services-grid, .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .about, .contact { grid-template-columns: 1fr; gap: 40px; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 64px 0; }
+    .services-grid, .gallery-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .hero { min-height: 88vh; }
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#" class="brand">
+      <img src="logo%20pedro%20oliva%20transparente.png" alt="Pedro Oliva Climatización">
+      <span>Pedro Oliva</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#galeria">Trabajos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="https://wa.me/5491149802278" target="_blank" rel="noopener">Presupuesto</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-media" id="heroMedia">
+    <img src="https://images.pexels.com/photos/32588555/pexels-photo-32588555.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Técnico manteniendo un aire acondicionado">
+  </div>
+  <div class="wrap">
+    <div class="hero-content">
+      <span class="eyebrow">Climatización de ambientes · Desde 1998</span>
+      <h1>Confort térmico para tu hogar y tu empresa</h1>
+      <p>Instalación, mantenimiento y venta de equipos de climatización en todo el AMBA. Aires acondicionados, losa radiante, calderas y equipos centrales.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/5491149802278" target="_blank" rel="noopener">Solicitar presupuesto</a>
+        <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">Deslizá</div>
+</section>
+
+<section id="servicios" class="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Servicios</span>
+      <h2>Soluciones integrales de climatización</h2>
+      <p>Proyecto, instalación y mantenimiento con materiales y equipos de primeras marcas.</p>
+    </div>
+    <div class="services-grid">
+      <article class="card reveal">
+        <div class="card-media"><img src="https://images.pexels.com/photos/27427771/pexels-photo-27427771.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Aire acondicionado"><!-- --img: aire --></div>
+        <div class="card-body"><h3>Aire acondicionado</h3><p>Instalación y mantenimiento de equipos split, multi-split y por conductos.</p></div>
+      </article>
+      <article class="card reveal">
+        <div class="card-media"><img src="https://images.pexels.com/photos/38067323/pexels-photo-38067323.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Losa radiante"><!-- --img: losa --></div>
+        <div class="card-body"><h3>Losa radiante</h3><p>Climatización por piso con distribución uniforme de la temperatura.</p></div>
+      </article>
+      <article class="card reveal">
+        <div class="card-media"><img src="https://images.pexels.com/photos/35069730/pexels-photo-35069730.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Piso y techo radiante"><!-- --img: piso/techo --></div>
+        <div class="card-body"><h3>Piso y techo radiante</h3><p>Sistemas radiantes para una climatización integral y silenciosa.</p></div>
+      </article>
+      <article class="card reveal">
+        <div class="card-media"><img src="https://images.pexels.com/photos/20046689/pexels-photo-20046689.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Venta de equipos"><!-- --img: venta --></div>
+        <div class="card-body"><h3>Venta de equipos</h3><p>Comercialización de equipos de aire y calefacción de primeras marcas.</p></div>
+      </article>
+      <article class="card reveal">
+        <div class="card-media"><img src="https://images.pexels.com/photos/30210086/pexels-photo-30210086.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Equipos centrales"><!-- --img: centrales --></div>
+        <div class="card-body"><h3>Equipos centrales</h3><p>Proyecto, instalación y mantenimiento de sistemas centrales de climatización.</p></div>
+      </article>
+      <article class="card reveal">
+        <div class="card-media"><img src="https://images.pexels.com/photos/34938439/pexels-photo-34938439.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Calderas"><!-- --img: calderas --></div>
+        <div class="card-body"><h3>Calderas</h3><p>Instalación y service de calderas para agua caliente y calefacción.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="wrap about">
+    <div class="about-media zoom-media reveal">
+      <img src="https://images.pexels.com/photos/32497161/pexels-photo-32497161.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Técnico de climatización">
+    </div>
+    <div class="about-copy reveal">
+      <span class="kicker">Nosotros</span>
+      <h2>Más de 25 años de experiencia en el AMBA</h2>
+      <p>Desde 1998 brindamos soluciones de climatización para hogares, comercios e industrias. Trabajamos con seriedad, puntualidad y atención personalizada, garantizando cada trabajo que realizamos.</p>
+      <div class="stats">
+        <div class="stat"><b>+25</b><span>Años de trayectoria</span></div>
+        <div class="stat"><b>AMBA</b><span>Cobertura integral</span></div>
+        <div class="stat"><b>100%</b><span>Trabajo garantizado</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria" class="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Trabajos</span>
+      <h2>Algunos de nuestros proyectos</h2>
+      <p>Calidad y prolijidad en cada instalación.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item zoom-media reveal"><img src="https://images.pexels.com/photos/38709544/pexels-photo-38709544.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Instalación"></div>
+      <div class="g-item zoom-media reveal"><img src="https://images.pexels.com/photos/16145690/pexels-photo-16145690.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mantenimiento"></div>
+      <div class="g-item zoom-media reveal"><img src="https://images.pexels.com/photos/6471913/pexels-photo-6471913.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Equipo"></div>
+      <div class="g-item zoom-media reveal"><img src="https://images.pexels.com/photos/3964617/pexels-photo-3964617.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sistema central"></div>
+      <div class="g-item zoom-media reveal"><img src="https://images.pexels.com/photos/38228166/pexels-photo-38228166.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Caldera"></div>
+      <div class="g-item zoom-media reveal"><img src="https://images.pexels.com/photos/6471911/pexels-photo-6471911.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Calefacción"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap contact">
+    <div class="reveal">
+      <span class="kicker">Contacto</span>
+      <h2>Hablemos de tu proyecto</h2>
+      <p>Completá el formulario o contactanos directamente por WhatsApp o correo electrónico. Respondemos a la brevedad.</p>
+      <div class="contact-links">
+        <a class="contact-item" href="https://wa.me/5491149802278" target="_blank" rel="noopener">
+          <span class="ic">W</span>
+          <span><span class="lbl">WhatsApp</span><br><span class="val">+54 9 11 4980-2278</span></span>
+        </a>
+        <a class="contact-item" href="mailto:peterolivaa@gmail.com">
+          <span class="ic">@</span>
+          <span><span class="lbl">Correo</span><br><span class="val">peterolivaa@gmail.com</span></span>
+        </a>
+      </div>
+    </div>
+    <form class="reveal" id="contactForm">
+      <div class="field">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+      </div>
+      <div class="field">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono">
+      </div>
+      <div class="field">
+        <label for="servicio">Servicio</label>
+        <select id="servicio" name="servicio">
+          <option>Aire acondicionado</option>
+          <option>Losa radiante</option>
+          <option>Piso y techo radiante</option>
+          <option>Venta de equipos</option>
+          <option>Equipos centrales</option>
+          <option>Calderas</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Contanos qué necesitás"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar por WhatsApp</button>
+      <span class="form-note">Al enviar se abrirá WhatsApp con tu mensaje listo para enviar.</span>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a href="#" class="brand">
+      <img src="logo%20pedro%20oliva%20transparente.png" alt="Pedro Oliva Climatización">
+      <span>Pedro Oliva Climatización</span>
+    </a>
+    <small>Desde 1998 · Climatización de ambientes · AMBA</small>
+  </div>
+</footer>
+
+<script>
+  // Header con sombra al scrollear
+  const header = document.getElementById('header');
+  const onScrollHeader = () => header.classList.toggle('scrolled', window.scrollY > 10);
+  window.addEventListener('scroll', onScrollHeader, { passive: true });
+  onScrollHeader();
+
+  // Efecto parallax/zoom del hero (la imagen se "agranda" sutilmente al scrollear)
+  const heroImg = document.querySelector('#heroMedia img');
+  const heroMedia = document.getElementById('heroMedia');
+  const onHeroScroll = () => {
+    const y = window.scrollY;
+    if (y < window.innerHeight) {
+      const scale = 1.15 + (y / window.innerHeight) * 0.1;
+      heroImg.style.transform = 'scale(' + scale + ')';
+      heroMedia.style.opacity = 1 - (y / (window.innerHeight * 1.1));
+    }
+  };
+  window.addEventListener('scroll', onHeroScroll, { passive: true });
+
+  // Reveal + zoom suave al entrar en pantalla
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal, .zoom-media').forEach(el => observer.observe(el));
+
+  // Formulario -> WhatsApp
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+    const servicio = document.getElementById('servicio').value;
+    const mensaje = document.getElementById('mensaje').value.trim();
+    const texto = 'Hola, soy ' + (nombre || 'un cliente') +
+      '. Quiero consultar por: ' + servicio + '.' +
+      (telefono ? ' Mi teléfono: ' + telefono + '.' : '') +
+      (mensaje ? ' Detalle: ' + mensaje : '');
+    window.open('https://wa.me/5491149802278?text=' + encodeURIComponent(texto), '_blank');
+  });
+</script>
+</body>
+</html>
