@@ -3,31 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pedro Oliva Climatización — Confort térmico en el AMBA</title>
-<meta name="description" content="Instalación, mantenimiento y venta de equipos de climatización. Aires acondicionados, losa radiante, calderas y equipos centrales. Desde 1998 en todo el AMBA.">
+<title>Pedro Oliva Climatización | Aires acondicionados, calderas y losa radiante en CABA y GBA</title>
+<meta name="description" content="Instalación y mantenimiento de aires acondicionados, losa radiante, piso y techo radiante, calderas y equipos centrales. Venta de equipos en Zona Sur, Zona Norte, Zona Oeste y CABA. Desde 1998.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!--
   ============================================================
-  IMÁGENES (stock de Pexels — reemplazalas por fotos reales)
+  IMÁGENES
   ============================================================
-  Hero ................. 32588555  (técnico manteniendo aire acondicionado)
-  Aire acondicionado ... 27427771  (split de pared)
-  Losa radiante ........ 38067323  (bomba de calor exterior)
-  Piso / techo radiante  35069730  (pies sobre piso cálido)
-  Venta de equipos ..... 20046689  (equipo/bomba de calor)
-  Equipos centrales .... 30210086  (unidad HVAC en azotea)
-  Calderas ............. 34938439  (técnico reparando sistema de calefacción)
-  Nosotros ............. 32497161  (técnico inspeccionando unidad exterior)
-  Galería .............. 38709544  (técnico con refrigerante)
-                         16145690  (aire acondicionado en azotea)
-                         6471913   (técnico de climatización)
-                         3964617   (técnico trabajando)
-                         38228166  (unidades de AC en azotea)
-                         6471911   (técnico de climatización)
-  Para cambiar una foto, reemplazá la URL completa en el <img>
-  correspondiente (buscá el comentario "--img: X").
+  Hero ............... stock Pexels 32588555 (técnico manteniendo AC)
+  Servicios .......... fotos locales:
+      aire%20acondicionado.jpg
+      losa%20radiante.jpg
+      piso%20techo.webp
+      venta%20de%20equipos.webp
+      equipo%20central.jpg
+      caldera.jpg
+  Nosotros ........... stock Pexels 32497161 (técnico inspeccionando unidad)
+  Clientes (logos) ... estrada.jpg, juncal.jpg, martinez.jpg,
+                       mostaza%201.jpg, nikee.jpg, sommie.jpg
   ============================================================
 -->
 <style>
@@ -143,14 +138,27 @@
   .stat b { display: block; font-family: "Sora", sans-serif; font-size: 28px; font-weight: 700; color: var(--accent); }
   .stat span { font-size: 13px; color: var(--muted); }
 
-  /* ---------- Galería (imágenes dinámicas) ---------- */
-  .gallery { background: var(--ink); color: #fff; }
-  .gallery .kicker { color: #7cc4f0; }
-  .gallery .section-head p { color: rgba(255,255,255,.6); }
-  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .g-item { position: relative; border-radius: 12px; overflow: hidden; height: 300px; }
-  .g-item img { width: 100%; height: 100%; object-fit: cover; }
-  .g-item:nth-child(2), .g-item:nth-child(5) { grid-row: span 1; }
+  /* ---------- Proceso ---------- */
+  .process { background: var(--bg-soft); }
+  .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .step { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; }
+  .step-num {
+    width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff;
+    display: grid; place-items: center; font-family: "Sora", sans-serif; font-weight: 700; font-size: 18px;
+  }
+  .step h3 { font-size: 17px; font-weight: 600; margin-top: 20px; }
+  .step p { color: var(--muted); font-size: 14px; margin-top: 10px; }
+
+  /* ---------- Clientes (marquee) ---------- */
+  .clients { padding: 80px 0; overflow: hidden; }
+  .clients .section-head { margin: 0 auto 48px; text-align: center; }
+  .marquee { position: relative; width: 100vw; margin-left: calc(50% - 50vw); }
+  .marquee-track { display: flex; width: max-content; animation: marquee 30s linear infinite; will-change: transform; }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  .marquee-group { display: flex; align-items: center; gap: 72px; padding-right: 72px; }
+  .marquee-group img { height: 56px; width: auto; object-fit: contain; filter: grayscale(1); opacity: .75; transition: opacity .3s, filter .3s; }
+  .marquee-group img:hover { opacity: 1; filter: grayscale(0); }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
   /* ---------- Contacto ---------- */
   .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
@@ -177,12 +185,39 @@
   .field textarea { resize: vertical; min-height: 120px; }
   .form-note { font-size: 12px; color: var(--muted); }
 
+  /* ---------- Contacto (fondo oscuro) ---------- */
+  .contact-section { background: var(--ink); color: #fff; }
+  .contact-section .kicker { color: #7cc4f0; }
+  .contact-section .contact h2 { color: #fff; }
+  .contact-section .contact > div > p { color: rgba(255,255,255,.65); }
+  .contact-section .contact-item { border-color: rgba(255,255,255,.16); }
+  .contact-section .contact-item:hover { border-color: #7cc4f0; }
+  .contact-section .contact-item .ic { background: rgba(255,255,255,.08); color: #7cc4f0; }
+  .contact-section .contact-item .lbl { color: rgba(255,255,255,.55); }
+  .contact-section .contact-item .val { color: #fff; }
+  .contact-section .field label { color: rgba(255,255,255,.85); }
+  .contact-section .field input,
+  .contact-section .field select,
+  .contact-section .field textarea {
+    background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); color: #fff;
+  }
+  .contact-section .field input::placeholder,
+  .contact-section .field textarea::placeholder { color: rgba(255,255,255,.4); }
+  .contact-section .field select option { color: var(--ink); }
+  .contact-section .field input:focus,
+  .contact-section .field select:focus,
+  .contact-section .field textarea:focus { border-color: #7cc4f0; box-shadow: 0 0 0 3px rgba(124,196,240,.18); }
+  .contact-section .form-note { color: rgba(255,255,255,.5); }
+  .contact-section .btn-primary { background: #fff; color: var(--ink); }
+  .contact-section .btn-primary:hover { background: #d7ebf8; }
+
   /* ---------- Footer ---------- */
   footer { border-top: 1px solid var(--line); padding: 40px 0; }
   .foot { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
   .foot .brand { font-size: 14px; }
   .foot .brand img { height: 36px; }
   .foot small { color: var(--muted); font-size: 13px; }
+  .foot-meta { display: flex; flex-direction: column; gap: 4px; text-align: right; }
 
   /* ---------- Animaciones de scroll ---------- */
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
@@ -192,13 +227,14 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 900px) {
-    .services-grid, .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
     .about, .contact { grid-template-columns: 1fr; gap: 40px; }
     .nav-links { display: none; }
   }
   @media (max-width: 600px) {
     section { padding: 64px 0; }
-    .services-grid, .gallery-grid { grid-template-columns: 1fr; }
+    .services-grid, .process-grid { grid-template-columns: 1fr; }
     .stats { grid-template-columns: 1fr 1fr; }
     .hero { min-height: 88vh; }
   }
@@ -215,7 +251,7 @@
     <nav class="nav-links">
       <a href="#servicios">Servicios</a>
       <a href="#nosotros">Nosotros</a>
-      <a href="#galeria">Trabajos</a>
+      <a href="#proceso">Proceso</a>
       <a href="#contacto">Contacto</a>
     </nav>
     <a class="btn btn-primary nav-cta" href="https://wa.me/5491149802278" target="_blank" rel="noopener">Presupuesto</a>
@@ -230,7 +266,7 @@
     <div class="hero-content">
       <span class="eyebrow">Climatización de ambientes · Desde 1998</span>
       <h1>Confort térmico para tu hogar y tu empresa</h1>
-      <p>Instalación, mantenimiento y venta de equipos de climatización en todo el AMBA. Aires acondicionados, losa radiante, calderas y equipos centrales.</p>
+      <p>Instalación, mantenimiento y venta de aires acondicionados, losa radiante, calderas y equipos centrales en Zona Sur, Zona Norte, Zona Oeste y CABA.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://wa.me/5491149802278" target="_blank" rel="noopener">Solicitar presupuesto</a>
         <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
@@ -249,27 +285,27 @@
     </div>
     <div class="services-grid">
       <article class="card reveal">
-        <div class="card-media"><img src="https://images.pexels.com/photos/27427771/pexels-photo-27427771.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Aire acondicionado"><!-- --img: aire --></div>
+        <div class="card-media"><img src="aire%20acondicionado.jpg" alt="Aire acondicionado"><!-- --img: aire --></div>
         <div class="card-body"><h3>Aire acondicionado</h3><p>Instalación y mantenimiento de equipos split, multi-split y por conductos.</p></div>
       </article>
       <article class="card reveal">
-        <div class="card-media"><img src="https://images.pexels.com/photos/38067323/pexels-photo-38067323.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Losa radiante"><!-- --img: losa --></div>
+        <div class="card-media"><img src="losa%20radiante.jpg" alt="Losa radiante"><!-- --img: losa --></div>
         <div class="card-body"><h3>Losa radiante</h3><p>Climatización por piso con distribución uniforme de la temperatura.</p></div>
       </article>
       <article class="card reveal">
-        <div class="card-media"><img src="https://images.pexels.com/photos/35069730/pexels-photo-35069730.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Piso y techo radiante"><!-- --img: piso/techo --></div>
+        <div class="card-media"><img src="piso%20techo.webp" alt="Piso y techo radiante"><!-- --img: piso/techo --></div>
         <div class="card-body"><h3>Piso y techo radiante</h3><p>Sistemas radiantes para una climatización integral y silenciosa.</p></div>
       </article>
       <article class="card reveal">
-        <div class="card-media"><img src="https://images.pexels.com/photos/20046689/pexels-photo-20046689.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Venta de equipos"><!-- --img: venta --></div>
+        <div class="card-media"><img src="venta%20de%20equipos.webp" alt="Venta de equipos"><!-- --img: venta --></div>
         <div class="card-body"><h3>Venta de equipos</h3><p>Comercialización de equipos de aire y calefacción de primeras marcas.</p></div>
       </article>
       <article class="card reveal">
-        <div class="card-media"><img src="https://images.pexels.com/photos/30210086/pexels-photo-30210086.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Equipos centrales"><!-- --img: centrales --></div>
+        <div class="card-media"><img src="equipo%20central.jpg" alt="Equipos centrales"><!-- --img: centrales --></div>
         <div class="card-body"><h3>Equipos centrales</h3><p>Proyecto, instalación y mantenimiento de sistemas centrales de climatización.</p></div>
       </article>
       <article class="card reveal">
-        <div class="card-media"><img src="https://images.pexels.com/photos/34938439/pexels-photo-34938439.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Calderas"><!-- --img: calderas --></div>
+        <div class="card-media"><img src="caldera.jpg" alt="Calderas"><!-- --img: calderas --></div>
         <div class="card-body"><h3>Calderas</h3><p>Instalación y service de calderas para agua caliente y calefacción.</p></div>
       </article>
     </div>
@@ -283,36 +319,77 @@
     </div>
     <div class="about-copy reveal">
       <span class="kicker">Nosotros</span>
-      <h2>Más de 25 años de experiencia en el AMBA</h2>
-      <p>Desde 1998 brindamos soluciones de climatización para hogares, comercios e industrias. Trabajamos con seriedad, puntualidad y atención personalizada, garantizando cada trabajo que realizamos.</p>
+      <h2>Más de 25 años de experiencia en Zona Sur, Zona Norte, Zona Oeste y CABA</h2>
+      <p>Desde 1998 brindamos soluciones de climatización para hogares, comercios e industrias de Zona Sur, Zona Norte, Zona Oeste y CABA. Trabajamos con seriedad, puntualidad y atención personalizada, garantizando cada trabajo que realizamos.</p>
       <div class="stats">
         <div class="stat"><b>+25</b><span>Años de trayectoria</span></div>
-        <div class="stat"><b>AMBA</b><span>Cobertura integral</span></div>
+        <div class="stat"><b>4 zonas</b><span>Sur · Norte · Oeste · CABA</span></div>
         <div class="stat"><b>100%</b><span>Trabajo garantizado</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="galeria" class="gallery">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Trabajos</span>
-      <h2>Algunos de nuestros proyectos</h2>
-      <p>Calidad y prolijidad en cada instalación.</p>
-    </div>
-    <div class="gallery-grid">
-      <div class="g-item zoom-media reveal"><img src="https://images.pexels.com/photos/38709544/pexels-photo-38709544.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Instalación"></div>
-      <div class="g-item zoom-media reveal"><img src="https://images.pexels.com/photos/16145690/pexels-photo-16145690.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mantenimiento"></div>
-      <div class="g-item zoom-media reveal"><img src="https://images.pexels.com/photos/6471913/pexels-photo-6471913.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Equipo"></div>
-      <div class="g-item zoom-media reveal"><img src="https://images.pexels.com/photos/3964617/pexels-photo-3964617.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sistema central"></div>
-      <div class="g-item zoom-media reveal"><img src="https://images.pexels.com/photos/38228166/pexels-photo-38228166.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Caldera"></div>
-      <div class="g-item zoom-media reveal"><img src="https://images.pexels.com/photos/6471911/pexels-photo-6471911.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Calefacción"></div>
+<section class="clients">
+  <div class="section-head reveal">
+    <span class="kicker">Clientes</span>
+    <h2>Empresas que confían en nosotros</h2>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <img src="estrada.jpg" alt="Estrada">
+        <img src="juncal.jpg" alt="Juncal">
+        <img src="martinez.jpg" alt="Martínez">
+        <img src="mostaza%201.jpg" alt="Mostaza">
+        <img src="nikee.jpg" alt="Nikee">
+        <img src="sommie.jpg" alt="Sommie">
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <img src="estrada.jpg" alt="Estrada">
+        <img src="juncal.jpg" alt="Juncal">
+        <img src="martinez.jpg" alt="Martínez">
+        <img src="mostaza%201.jpg" alt="Mostaza">
+        <img src="nikee.jpg" alt="Nikee">
+        <img src="sommie.jpg" alt="Sommie">
+      </div>
     </div>
   </div>
 </section>
 
-<section id="contacto">
+<section id="proceso" class="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Proceso</span>
+      <h2>Cómo trabajamos</h2>
+      <p>Un proceso simple y transparente, de la consulta al mantenimiento.</p>
+    </div>
+    <div class="process-grid">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h3>Consulta</h3>
+        <p>Escuchamos tu necesidad y evaluamos el espacio para recomendarte la mejor solución.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <h3>Presupuesto</h3>
+        <p>Te enviamos una propuesta clara y detallada, sin sorpresas ni costos ocultos.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <h3>Instalación</h3>
+        <p>Ejecutamos el trabajo con prolijidad, seguridad y en los tiempos acordados.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <h3>Mantenimiento</h3>
+        <p>Ofrecemos servicio post-venta y mantenimiento programado para alargar la vida de tu equipo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact-section">
   <div class="wrap contact">
     <div class="reveal">
       <span class="kicker">Contacto</span>
@@ -366,7 +443,10 @@
       <img src="logo%20pedro%20oliva%20transparente.png" alt="Pedro Oliva Climatización">
       <span>Pedro Oliva Climatización</span>
     </a>
-    <small>Desde 1998 · Climatización de ambientes · AMBA</small>
+    <div class="foot-meta">
+      <small>Desde 1998 · Zona Sur, Zona Norte, Zona Oeste y CABA</small>
+      <small>Instalación y mantenimiento de aires acondicionados · Losa radiante · Calderas · Equipos centrales</small>
+    </div>
   </div>
 </footer>
 
@@ -401,6 +481,20 @@
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.reveal, .zoom-media').forEach(el => observer.observe(el));
+
+  // Marquee: duplicar logos (en pares) hasta cubrir todo el ancho y lograr loop continuo
+  const track = document.querySelector('.marquee-track');
+  if (track) {
+    const group = track.querySelector('.marquee-group');
+    const need = window.innerWidth * 2;
+    let guard = 0;
+    while (track.scrollWidth < need && guard < 30) {
+      const a = group.cloneNode(true); a.setAttribute('aria-hidden', 'true');
+      const b = group.cloneNode(true); b.setAttribute('aria-hidden', 'true');
+      track.appendChild(a); track.appendChild(b);
+      guard++;
+    }
+  }
 
   // Formulario -> WhatsApp
   document.getElementById('contactForm').addEventListener('submit', function (e) {
